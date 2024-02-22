@@ -58,3 +58,31 @@ const typed = new Typed('.multiple-text',{
     backDelay: 1000,
     loop: true
 });
+
+function myFunction() {
+    var copyText = document.getElementById("email");
+    var emailText = copyText.innerText;
+
+    // Create a textarea element to temporarily hold the text
+    var textarea = document.createElement("textarea");
+    textarea.value = emailText;
+    document.body.appendChild(textarea);
+
+    // Select the text in the textarea
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+
+    // Remove the temporary textarea
+    document.body.removeChild(textarea);
+
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied!";
+}
+  
+function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+}

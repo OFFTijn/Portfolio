@@ -187,26 +187,41 @@ span {
     text-align: center;
     color: var(--main-color)
 }
-
- .skill {
+.skill {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Adjust the spacing between skills */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-.logo {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px; /* Adjust the size as needed */
-    border-radius: 50%; /* Creates a round image */
-    margin-right: 10px; /* Adjust the spacing between the logo and the text */
+.skill-content {
+    display: flex;
+    align-items: center;
+}
+
+.skillimg {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .bar {
-    width: 100%; /* Adjust the width of the bar as needed */
-    height: 10px; /* Adjust the height of the bar as needed */
-    background-color: #ccc; /* Set the background color of the bar */
-    border-radius: 5px; /* Creates rounded corners for the bar */
-    margin-top: 5px; /* Adjust the spacing between bars */
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: rgba(134, 134, 134, 0.589);
+}
+
+.bar span {
+    height: 100%;
+    display: block;
+    border-radius: 5px;
+    background: linear-gradient(to right, #0155FE, #00e1ff);
+}
+
+.info {
+    margin-left: 10px; 
 }
 
 
@@ -233,41 +248,9 @@ span {
     color: var(--text-color)
 }
 
-.about-skill .skill-bar .info{
-    font-size: 3rem !important;
-    font-weight: 500 !important;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.skill-bar .bar {
-    width: 100%;
-    height: 10px;
-    position: relative;
-    background-color: rgba(134, 134, 134, 0.589);
-    border-radius: 25px;
-}
-
-.skill-bar .bar span {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to right, #0155FE, #00e1ff);
-    border-radius: 25px;
-}
-
-.info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: .5rem;
-    margin-top: .5rem;
-}
 
 .skill-bar .bar .html {
-    width: 15%;
+    width: 40%;
     animation: html 3s;
 }
 
@@ -275,12 +258,12 @@ span {
     0%{
         width: 0;
     }100%{
-        width: 15%;
+        width: 40%;
     }
 }
 
 .skill-bar .bar .css {
-    width: 25%;
+    width: 35%;
     animation: css 3s;
 }
 
@@ -288,12 +271,12 @@ span {
     0%{
         width: 0;
     }100%{
-        width: 25%;
+        width: 35%;
     }
 }
 
 .skill-bar .bar .python {
-    width: 20%;
+    width: 45%;
     animation: python 3s;
 }
 
@@ -301,12 +284,12 @@ span {
     0%{
         width: 0;
     }100%{
-        width: 20%;
+        width: 45%;
     }
 }
 
 .skill-bar .bar .csharp {
-    width: 35%;
+    width: 55%;
     animation: csharp 3s;
 }
 
@@ -314,7 +297,7 @@ span {
     0%{
         width: 0;
     }100%{
-        width: 35%;
+        width: 55%;
     }
 }
 
@@ -413,10 +396,135 @@ span {
     color: var(--second-bg-color);
 }
 
-.portfolio .heading {
-    font-size: 5rem;
+/* Contact */
+.contact {
+    background-color: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
 }
 
+.heading {
+    font-size: 5rem;
+    align-self: flex-start;
+}
+
+.BigCard {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    background: #fff;
+    margin-top: 8rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    width: 100%;
+    max-width: 90rem;
+}
+
+.ContactMe {
+    font-size: 3rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: space-around;
+    row-gap: 1rem;
+}
+
+.ContactBox {
+    display: flex;
+    align-items: center; 
+    gap: 10px 20px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.ContactBox button{
+    background: transparent;
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.ContactBox button img {
+    margin: auto; 
+    display: block;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    margin-left: -70%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.ContactMe .btnmail {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btnmail:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.BigCard .divider-line {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.BigCard .divider-line .line {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.BigCard .divider-line .or-text {
+    margin: 0 1rem;
+    color: #ccc;
+    font-size: 1.5rem;
+}
 /* Footer */
 
 .footer {
