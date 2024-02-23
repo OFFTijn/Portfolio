@@ -33,12 +33,17 @@ section {
     padding: 10rem 9% 2rem;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
+    padding: 0rem 9%;
     background: var(--bg-color);
     display: flex;
     justify-content: space-between;
@@ -402,7 +407,7 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh; 
+    min-height: 80vh;
 }
 
 .heading {
@@ -432,6 +437,8 @@ span {
     -webkit-box-align: center;
     align-items: center;
     flex-flow: wrap;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     justify-content: space-around;
     row-gap: 1rem;
 }
@@ -498,20 +505,26 @@ span {
     border-radius: 10px;
     padding: 1rem 2rem;
     background: var(--main-color);
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 600;
     transition: background-color 0.3s, box-shadow 0.3s;
+    color: black;
 }
 
 .btnmail:hover {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
+.btnmail .bx-mail-send{
+    border: 1px solid #000;
+    padding: 0.5rem; 
+    border-radius: 5px;
+    margin-right: 1.6rem;
+}
+
 .BigCard .divider-line {
     display: flex;
     align-items: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
 }
 
 .BigCard .divider-line .line {
@@ -524,6 +537,33 @@ span {
     margin: 0 1rem;
     color: #ccc;
     font-size: 1.5rem;
+}
+
+.Linkedincontact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.LinkedinButton {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    font-size: 1.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.LinkedinButton:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.LinkedinButton .bxl-linkedin {
+        border: 1px solid #000;
+        padding: 0.5rem; 
+        border-radius: 5px;
+        margin-right: 1.6rem;
 }
 /* Footer */
 
